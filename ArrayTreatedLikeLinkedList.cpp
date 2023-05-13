@@ -12,8 +12,6 @@ int example(int b)
     {
        if(b==A[j])
        {
-    
-           
            if(j<size+1){
             current = j;
             cout<<"Current Position in Array "<< current<<"\n";
@@ -22,8 +20,8 @@ int example(int b)
         }
        }
     }
+    return 0;
 };
-
 int main() {
     example(23);
 
