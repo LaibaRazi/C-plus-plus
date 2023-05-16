@@ -102,9 +102,9 @@ public:
             if (ptr->get() % 2 == 0)
             {
                 Node *newNode = new Node;
-                newNode->set(ptr->get());
+                newNode->set(ptr ->get());
                 newNode->setNext(NULL);
-                if (Even = NULL)
+                if (Even == NULL)
                 {
                     Even = newNode;
                     Even_Tail = newNode;
@@ -136,14 +136,49 @@ public:
             newNode -> setNext(NULL);
             if(Head == NULL)
             {
-                Node* newNode = new Node;
-                newNode -> set(ptr -> get());
+               Head=newNode;
+               Tail = newNode;
             }
-
+            else
+            {
+                Tail-> setNext(newNode);
+                Tail = newNode;
+            }
+            ptr = ptr -> getNext();
         }
+        ptr =Even;
+        while(ptr != NULL)
+        {
+            Node* newNode = new Node;
+            newNode ->set(ptr -> get());
+            newNode -> setNext(NULL);
+            Tail -> setNext(newNode);
+            Tail = newNode;
+            ptr = ptr -> getNext();
+        }
+        ptr =Head;
+            while (ptr != NULL)
+            {
+             cout<<"List Element"<<ptr ->get()<<"\n";
+             ptr =ptr ->getNext();
+            }
+            
+        
     }
 };
 int main()
 {
+    list L;
+    for(int i=1;i<=9;i++)
+    {
+        L.insert();}
+        cout<<"\n\n *****OutPut***** \n\n Odd List \n\n";
+        L.Odd_List();
+        cout<<"\n Even List \n\n";
+        L.Even_list();
+        cout<<"\n\n Merge List \n\n";
+        L.Merge_List();
+        
+    
     return 0;
 }
